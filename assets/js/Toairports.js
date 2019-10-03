@@ -1,4 +1,4 @@
-function getAirports() {
+function getToAirports() {
 
     const url = 'http://localhost:8000/united/airports/';
 
@@ -9,8 +9,8 @@ function getAirports() {
         if (request.status === 200) {
             const data = JSON.parse(request.responseText);
         
-            var sel = document.getElementById('SelectAir');
-
+            var sel = document.getElementById('SelectAirTo');
+            
             for (var key in data) {
                 if (!data.hasOwnProperty(key)) {           
                     continue;
