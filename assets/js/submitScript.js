@@ -7,10 +7,11 @@ function doFunction() {
     request.onload = function () {
         // Begin accessing JSON data here
         var data = JSON.parse(this.response)
-
+        console.log(data)
         if (request.status >= 200 && request.status < 400) {
-            //  alert("Demo AsAlert");
-            alert(data.owner_first_name);
+            // alert("Hello");
+            //alert(data.name);
+            document.getElementById("userName").innerHTML = data.name;
             // data.forEach(movie => {
             // console.log(movie.title)
             // })
