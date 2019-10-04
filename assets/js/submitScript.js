@@ -11,6 +11,7 @@ function doFunction() {
         if (request.status >= 200 && request.status < 400) {
             // alert("Hello");
             //alert(data.name);
+            localStorage.setItem("pet_data", JSON.stringify(data));
             document.getElementById("userName").innerHTML = data.name;
             // data.forEach(movie => {
             // console.log(movie.title)

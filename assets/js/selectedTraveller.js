@@ -14,3 +14,10 @@ function selectedTravellerDetails(){
     var sel = document.getElementById("travelTime");
     sel.innerHTML = `${flyer_data["Departure"]["Date"]} &nbsp;<br>${flyer_data["Departure"]["Time"]} - ${flyer_data["Arrival"]["Time"]}<br><br>Main Cabin<br>Non-Stop<br>`
 }
+
+function getDetails(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var flyerId = urlParams.get('flyerId');
+    url = "../../booked.html?" + "flyerId=" + flyerId;
+    window.location = url;
+}
