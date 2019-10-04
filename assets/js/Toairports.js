@@ -10,18 +10,18 @@ function getToAirports() {
             const data = JSON.parse(request.responseText);
             localStorage.setItem("airports", JSON.stringify(data));
             var sel = document.getElementById('SelectAirTo');
-            
+
             for (var key in data) {
-                if (!data.hasOwnProperty(key)) {           
+                if (!data.hasOwnProperty(key)) {
                     continue;
                 }
                 var opt = document.createElement('option');
-                opt.appendChild( document.createTextNode(data[key] + " (" + key + ")"));
+                opt.appendChild(document.createTextNode(data[key] + " (" + key + ")"));
                 opt.value = data[key];
                 sel.appendChild(opt);
             }
             //console.log("size: " + dropdown.length);
-            
+
         } else {
             console.log("I met an Error");
         }
@@ -38,19 +38,19 @@ function nextPage() {
     var toAirport = document.getElementById("SelectAirTo").value;
     var fromAirport = document.getElementById("SelectAir").value;
     var sourceDate = document.getElementById("sourceDate").value;
-
+    console.log(fromAirport)
+    console.log(toAirport)
     var dest = "";
     var source = "";
-    var source_date = "";
 
     airports = JSON.parse(localStorage.getItem("airports"))
     for (var key in airports) {
         if (airports[key] == fromAirport) {
-            dest = key;
+            source = key;
         }
 
         if (airports[key] == toAirport) {
-            source = key;
+            dest = key;
         }
     }
 
