@@ -29,7 +29,8 @@ function fillFlyers() {
 
                 var sel = document.getElementById(`flyer${count}_name`);
                 sel.innerHTML = `${flyer_data["kinship_name"]} | ${flyer_data["kinship_id"]}`
-
+                var storagename = `flyer${count}`;
+                localStorage.setItem(storagename, JSON.stringify(flyer_data));
                 count++;
             }
         } else {
@@ -41,4 +42,9 @@ function fillFlyers() {
         console.error('An error occurred fetching the JSON from ' + url);
     };
     request.send()
+}
+
+function flyer(flyerId){
+    url = "../../selectedTraveller.html?" + "flyerId=" + flyerId;
+    window.location = url;
 }
