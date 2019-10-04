@@ -8,6 +8,9 @@ function selectedTravellerDetails(){
     var sel = document.getElementById("travelDetails");
     sel.innerHTML = `${from}<br> to <br>${to}<br>`
 
+    var sel = document.getElementById("name");
+    sel.innerHTML = `${flyer_data["kinship_name"]} | ${flyer_data["kinship_id"]}`
+
     var sel = document.getElementById("travelTime");
     sel.innerHTML = `${flyer_data["Departure"]["Date"]} &nbsp;<br>${flyer_data["Departure"]["Time"]} - ${flyer_data["Arrival"]["Time"]}<br><br>Main Cabin<br>Non-Stop<br>`
 }
